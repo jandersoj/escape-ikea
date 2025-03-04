@@ -1,0 +1,201 @@
+[gd_scene load_steps=21 format=3 uid="uid://k74f3w1fjldp"]
+
+[ext_resource type="Script" path="res://couch.gd" id="1_egbov"]
+[ext_resource type="Script" path="res://pole.gd" id="2_8jn3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_122oa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_08vf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpyhs"]
+albedo_color = Color(0.00392157, 0.807843, 0.917647, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_lggso"]
+inner_radius = 0.001
+outer_radius = 0.432
+rings = 10
+ring_segments = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjr8o"]
+albedo_color = Color(0.290196, 0.12549, 0.223529, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_i0s6d"]
+inner_radius = 0.015
+outer_radius = 0.5
+rings = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_817c4"]
+albedo_color = Color(0.290293, 0.123851, 0.222432, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_sup4v"]
+inner_radius = 1.2
+outer_radius = 1.336
+rings = 6
+ring_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aywft"]
+albedo_color = Color(0.449907, 0.347543, 0.228051, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8wyo"]
+albedo_color = Color(0.45098, 0.34902, 0.227451, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vcog4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtoyr"]
+albedo_color = Color(0.342207, 0.342207, 0.342207, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u6cyd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0mbw"]
+albedo_color = Color(0.45098, 0.34902, 0.227451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g3mpw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4olr"]
+albedo_color = Color(0.45098, 0.34902, 0.227451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_utv2u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gi6s"]
+albedo_color = Color(0.0650057, 0.078025, 0.329551, 1)
+
+[node name="couch" type="CharacterBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.0841588, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_egbov")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_122oa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0990512, 0)
+visible = false
+mesh = SubResource("BoxMesh_08vf5")
+surface_material_override/0 = SubResource("StandardMaterial3D_vpyhs")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.8, 0.037, 0.3, 0.009)
+mesh = SubResource("TorusMesh_lggso")
+surface_material_override/0 = SubResource("StandardMaterial3D_qjr8o")
+
+[node name="head" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(4.52849e-08, -0.299954, 0.104709, 1.58107e-09, -0.00523546, -5.99909, 0.6, 2.26528e-08, 7.90533e-09, -0.30467, 1.92381, 0.0103536)
+mesh = SubResource("TorusMesh_i0s6d")
+surface_material_override/0 = SubResource("StandardMaterial3D_817c4")
+
+[node name="Arm" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.198904, -0.0313585, 3.65527e-09, 0, -1.31134e-08, -0.8, 0.0209057, 0.298357, -3.47775e-08, -0.0883421, 0.789184, 0.270352)
+mesh = SubResource("TorusMesh_sup4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_aywft")
+
+[node name="Arm2" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.198904, 0.0313585, -3.65527e-09, 0, -1.31134e-08, -0.8, -0.0209057, 0.298357, -3.47775e-08, -0.0883421, 0.789184, -0.250349)
+mesh = SubResource("TorusMesh_sup4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_c8wyo")
+
+[node name="Pole2" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.0441942, 0, 0.0441942, 0, 1.25, 0, -0.0441942, 0, 0.0441942, 0.000594422, -0.50674, 0.00102906)
+visible = false
+mesh = SubResource("CylinderMesh_vcog4")
+skeleton = NodePath("../head")
+surface_material_override/0 = SubResource("StandardMaterial3D_xtoyr")
+
+[node name="Pole" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.063, 0, 0, 0, 0.75, 0, 0, 0, 0.063, 0.000238046, -0.781423, 0.00032704)
+mesh = SubResource("CylinderMesh_vcog4")
+skeleton = NodePath("../head")
+surface_material_override/0 = SubResource("StandardMaterial3D_xtoyr")
+script = ExtResource("2_8jn3q")
+
+[node name="Legs4" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(3.09984, -0.0198855, -0.350747, 1.41737, 0.245495, 2.06961e-08, 3.09984, -0.0198855, 0.350747, -1.56818, -1.6216, -1.58425)
+mesh = SubResource("BoxMesh_u6cyd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_l0mbw")
+
+[node name="Legs" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(3.09984, -0.0198855, 0.350747, 1.41737, 0.245495, 0, -3.09984, 0.0198855, 0.350747, -1.48741, -1.62589, 1.51509)
+mesh = SubResource("BoxMesh_g3mpw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4olr")
+
+[node name="Legs2" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(-3.09977, 0.0198974, -0.350747, 1.41822, 0.24549, -2.46716e-15, 3.09978, -0.0198974, -0.350747, 1.61719, -1.62245, -1.59706)
+mesh = SubResource("BoxMesh_u6cyd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_l0mbw")
+
+[node name="Legs3" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(-3.09977, 0.0198974, 0.350747, 1.41822, 0.24549, -1.0348e-08, -3.09977, 0.0198974, -0.350747, 1.54397, -1.62589, 1.52035)
+mesh = SubResource("BoxMesh_g3mpw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4olr")
+
+[node name="wheel" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.701495, 0, 0.701495, 0, 0.5, 0, -0.701495, 0, 0.701495, 3.11907, -2.35267, 3.04494)
+mesh = SubResource("SphereMesh_utv2u")
+skeleton = NodePath("../../Pole2")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="wheel2" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.701495, 0, 0.701495, 0, 0.5, 0, -0.701495, 0, 0.701495, -2.94235, -2.35267, -2.96009)
+mesh = SubResource("SphereMesh_utv2u")
+skeleton = NodePath("../../Pole2")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="wheel3" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.701495, 0, 0.701495, 0, 0.5, 0, -0.701495, 0, 0.701495, 3.00296, -2.35267, -2.97492)
+mesh = SubResource("SphereMesh_utv2u")
+skeleton = NodePath("../../Pole2")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="wheel4" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.701495, 0, 0.701495, 0, 0.5, 0, -0.701495, 0, 0.701495, -2.85602, -2.35267, 2.89665)
+mesh = SubResource("SphereMesh_utv2u")
+skeleton = NodePath("../../Pole2")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="Legs5" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(9.46106e-07, -5.54359e-09, -0.496032, 1.41737, 0.245495, 2.06961e-08, 4.38384, -0.0281224, 7.39145e-08, 0.0152421, -1.6216, -2.24099)
+mesh = SubResource("BoxMesh_u6cyd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_l0mbw")
+
+[node name="Legs6" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(4.38384, -0.0281224, 0, 1.41737, 0.245495, 0, 0, 0, 0.496032, -2.11921, -1.62589, 0.00769101)
+mesh = SubResource("BoxMesh_g3mpw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4olr")
+
+[node name="Legs7" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(-4.38374, 0.0281392, -7.39145e-08, 1.41822, 0.24549, -2.46716e-15, 7.09579e-07, -5.54359e-09, -0.496032, 2.2767, -1.62245, 0.00235344)
+mesh = SubResource("BoxMesh_u6cyd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_l0mbw")
+
+[node name="Legs8" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(-2.36526e-07, 2.77179e-09, 0.496032, 1.41822, 0.24549, -1.0348e-08, -4.38374, 0.0281392, -2.95658e-08, 0.0205837, -1.62589, 2.15492)
+mesh = SubResource("BoxMesh_g3mpw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4olr")
+
+[node name="wheel5" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.992063, 0, 0, 0, 0.5, 0, 0, 0, 0.992063, 0.0562949, -2.35267, 4.34674)
+mesh = SubResource("SphereMesh_utv2u")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="wheel6" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.992063, 0, 0, 0, 0.5, 0, 0, 0, 0.992063, 0.0164249, -2.35267, -4.18553)
+mesh = SubResource("SphereMesh_utv2u")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="wheel7" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.992063, 0, 0, 0, 0.5, 0, 0, 0, 0.992063, 4.23087, -2.35267, 0.00795154)
+mesh = SubResource("SphereMesh_utv2u")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
+
+[node name="wheel8" type="MeshInstance3D" parent="Base/Pole"]
+transform = Transform3D(0.992063, 0, 0, 0, 0.5, 0, 0, 0, 0.992063, -4.06388, -2.35267, 0.0168572)
+mesh = SubResource("SphereMesh_utv2u")
+surface_material_override/0 = SubResource("StandardMaterial3D_7gi6s")
