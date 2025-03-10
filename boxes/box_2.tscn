@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvky1va4gndgf"]
+
+[ext_resource type="PackedScene" uid="uid://cy0rv5xyymrsm" path="res://boxes/isrealBox.glb" id="1_p353u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d8pbs"]
+size = Vector3(4.03958, 0.498169, 3.01617)
+
+[node name="Box2" type="Node3D"]
+
+[node name="isrealBox" parent="." instance=ExtResource("1_p353u")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="isrealBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00167399, 0.221644, -0.00204127)
+shape = SubResource("BoxShape3D_d8pbs")
