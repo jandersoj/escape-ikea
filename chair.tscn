@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=3 uid="uid://875wxw67ltqu"]
+
+[ext_resource type="Script" path="res://couch.gd" id="1_3guu3"]
+[ext_resource type="Script" path="res://base.gd" id="1_c0t75"]
+[ext_resource type="Script" path="res://sit_pad_3.gd" id="2_kerwt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4cijp"]
+size = Vector3(2, 3, 4.08716)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3lr23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w3of"]
+albedo_color = Color(0.207031, 0.0847477, 0.0396271, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_16xu2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8ij8"]
+albedo_color = Color(0.45098, 0.34902, 0.227451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xt7q4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfrge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10j30"]
+albedo_color = Color(0.207843, 0.0862745, 0.0392157, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_tn6v6"]
+inner_radius = 0.037
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcdw8"]
+albedo_color = Color(0.25098, 0.0235294, 0.0784314, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_gih5u"]
+inner_radius = 0.033
+outer_radius = 1.098
+rings = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twnqu"]
+albedo_color = Color(0.25098, 0.0235294, 0.0784314, 1)
+
+[node name="chair" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_3guu3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.031969, 0, -0.999489, 0, 1, 0, 0.999489, 0, -0.031969, 0.018345, 0.394404, -0.0465612)
+shape = SubResource("BoxShape3D_4cijp")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0559458, -0.00348877, -3.56882, -9.71445e-17, 0.249976, -0.0498589, 1.74911, -0.000111589, -0.11415, 0.0330482, 0.1747, 0.0223605)
+mesh = SubResource("BoxMesh_3lr23")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w3of")
+script = ExtResource("1_c0t75")
+
+[node name="legs" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.1, 0, 0, 0, 2, 6.64666e-05, 0, -0.00195492, 0.068, 0.419992, -1.50149, -0.453984)
+mesh = SubResource("BoxMesh_16xu2")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8ij8")
+
+[node name="legs2" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.1, 0, 0, 0, 2, 6.64672e-05, 0, -0.00195492, 0.068, 0.419992, -1.31878, 0.462061)
+mesh = SubResource("BoxMesh_16xu2")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8ij8")
+
+[node name="legs3" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.1, 0, 0, 0, 2, 6.64672e-05, 0, -0.00195492, 0.068, -0.45, -1.318, 0.45)
+mesh = SubResource("BoxMesh_16xu2")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8ij8")
+
+[node name="legs4" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.1, 0, 0, 0, 2, 6.64672e-05, 0, -0.00195492, 0.068, -0.45, -1.5, -0.45)
+mesh = SubResource("BoxMesh_16xu2")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8ij8")
+
+[node name="BackRest" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(-0.273616, -0.134242, 0, 5.26228, -0.34202, 0, -4.65661e-10, 5.82077e-11, 0.840101, -0.772027, 3.22692, -0.00795274)
+mesh = SubResource("BoxMesh_xt7q4")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w3of")
+
+[node name="Arm2" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(1.02857, 0, 0, 0, 1.97427, -0.127905, 0, 0.0223861, 0.0552863, -0.0203813, 1.48897, 0.480776)
+mesh = SubResource("BoxMesh_xfrge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_10j30")
+
+[node name="Arm" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(1.02857, 0, 0, 0, 1.96457, 0.149905, 0, -0.0262365, 0.0550147, -0.0205714, 1.297, -0.483013)
+mesh = SubResource("BoxMesh_xfrge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_10j30")
+
+[node name="SitPad3" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(-0.458832, 0, -0.424654, 0.0498044, 1.9998, -0.0373701, 0.249702, -0.00195494, -0.187361, 0.063753, 1.16811, 0.223428)
+mesh = SubResource("TorusMesh_tn6v6")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gcdw8")
+script = ExtResource("2_kerwt")
+
+[node name="SitPad" type="MeshInstance3D" parent="Base/SitPad3"]
+transform = Transform3D(0.0523359, 0, 0.998629, 0, 1, 0, -1.19836, 0, 0.062803, -0.937377, 0, 1.10688)
+mesh = SubResource("TorusMesh_tn6v6")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gcdw8")
+
+[node name="Timer" type="Timer" parent="Base/SitPad3"]
+wait_time = 0.07
+
+[node name="pillow" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.0682584, 0.402303, 0.222326, -0.860658, 1.51965, -2.89142, -0.229881, 0.000802979, 0.0689106, -0.511832, 3.34987, 0.242374)
+rotation_order = 0
+mesh = SubResource("TorusMesh_gih5u")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_twnqu")
+
+[node name="pillow2" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(0.0728587, 0.429416, 0.15133, -0.934254, 1.0859, -3.08629, -0.228127, 0.0111407, 0.0735549, -0.423731, 3.26226, -0.196863)
+rotation_order = 0
+mesh = SubResource("TorusMesh_gih5u")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_twnqu")
+
+[node name="Timer" type="Timer" parent="Base"]
+wait_time = 0.3
+
+[connection signal="timeout" from="Base/SitPad3/Timer" to="Base/SitPad3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Base/Timer" to="Base" method="_on_timer_timeout"]

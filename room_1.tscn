@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3hkrbmx8ewmc"]
+[gd_scene load_steps=18 format=3 uid="uid://d3hkrbmx8ewmc"]
 
 [ext_resource type="Script" path="res://spot_light_3d_5.gd" id="2_ip1n4"]
 [ext_resource type="Script" path="res://spot_light_3d_26.gd" id="3_441c1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://exit_trigger.gd" id="5_c010i"]
 [ext_resource type="PackedScene" uid="uid://k74f3w1fjldp" path="res://couch.tscn" id="6_77c5e"]
 [ext_resource type="PackedScene" uid="uid://cl0caq60hdjjw" path="res://playerorg.tscn" id="7_2nagm"]
+[ext_resource type="PackedScene" uid="uid://875wxw67ltqu" path="res://chair.tscn" id="7_42vf6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6sqb8"]
 
@@ -416,3 +417,6 @@ shape = SubResource("BoxShape3D_k15pj")
 
 [node name="couch" parent="." instance=ExtResource("6_77c5e")]
 transform = Transform3D(2.185, 0, 0, 0, 2.185, 0, 0, 0, 2.185, 95.4433, 0.0760563, -44.5287)
+
+[node name="chair" parent="." instance=ExtResource("7_42vf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.733, 0.557513, -25.7836)

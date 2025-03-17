@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var sensitivity: float = 0.002  # Mouse look sensitivity
 @export var jump_velocity: float = 18.0  # Jump force
 @export var gravity: float = 40.0  # Gravity strength
+@onready var progress_bar: ProgressBar = $"hud/ProgressBar"
 var health=100.0
 var direction = Vector3.ZERO
 var mouse_input = Vector2.ZERO
@@ -14,11 +15,23 @@ var script1=couchscript.new()
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Lock mouse
 	add_to_group("player")
+	progress_bar.value=health
 
 func _process(delta):
 	handle_movement(delta)
 	if $AudioStreamPlayer.playing==false:
 		$AudioStreamPlayer.play()
+	if Input.is_action_pressed("quit"):
+		get_tree().quit()
+	#if Input.is_action_pressed("pause"):
+		#if get_tree().paused==false:
+		#	set_process_input(true)
+		#	set_process_unhandled_input(true)
+		#	get_tree().paused=true
+		#elif get_tree().paused==true:
+			#set_process_input(true)
+			#set_process_unhandled_input(true)
+			#get_tree().paused=false
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -50,15 +63,15 @@ func handle_movement(delta):
 	velocity.x = direction.x
 	velocity.z = direction.z
 	move_and_slide()
+
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("quit"):
-		get_tree().quit()
+	
 	var overlapping_mobs=%Hitbox.get_overlapping_bodies()
 	while overlapping_mobs.size()>0 && $DamageTimer.is_stopped():
 		for body in overlapping_mobs:
 			if body.is_in_group("enemy"):
 				health-=script1.damage() * overlapping_mobs.size() 
-				#%ProgressBar.value=health
+				progress_bar.value=health
 				$DamageTimer.start()
 				move_and_collide(direction)
 				#print("got here")
@@ -68,4 +81,3 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 			
 				
-		
