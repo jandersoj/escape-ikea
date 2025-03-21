@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpenooxaef4dx"]
+
+[ext_resource type="PackedScene" uid="uid://c32gyqvrwjcis" path="res://IKEA_assets/dependencies/sergioBox.glb" id="1_h6l5c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lesm8"]
+size = Vector3(5.00197, 0.454346, 2.02774)
+
+[node name="Box4" type="Node3D"]
+
+[node name="sergioBox" parent="." instance=ExtResource("1_h6l5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sergioBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00307465, 0.00167857, 0.000106812)
+shape = SubResource("BoxShape3D_lesm8")

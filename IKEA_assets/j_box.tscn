@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfqxuwewls6io"]
+
+[ext_resource type="PackedScene" uid="uid://bu8n28u6rrolp" path="res://IKEA_assets/dependencies/josieBox.glb" id="1_2uo5l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nl2st"]
+size = Vector3(1.01172, 0.213745, 2.0105)
+
+[node name="Box1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0192984, 0)
+
+[node name="josieBox" parent="." instance=ExtResource("1_2uo5l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="josieBox"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00233793, 0.221768, -0.00242668)
+shape = SubResource("BoxShape3D_nl2st")

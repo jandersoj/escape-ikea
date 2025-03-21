@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-@export var speed: float = 25.0  # Movement speed
+@export var speed: float = 20.0  # Movement speed
 @export var sensitivity: float = 0.002  # Mouse look sensitivity
 @export var jump_velocity: float = 18.0  # Jump force
 @export var gravity: float = 40.0  # Gravity strength
 @onready var progress_bar: ProgressBar = $"hud/ProgressBar"
 var health=100.0
+#var current_room: String= "res://room_1.tscn"
 var direction = Vector3.ZERO
 var mouse_input = Vector2.ZERO
 @export var couchscript = preload("res://couch.gd")
@@ -19,8 +20,8 @@ func _ready():
 
 func _process(delta):
 	handle_movement(delta)
-	if $AudioStreamPlayer.playing==false:
-		$AudioStreamPlayer.play()
+	#if $AudioStreamPlayer.playing==false:
+	#	$AudioStreamPlayer.play()
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
 	#if Input.is_action_pressed("pause"):
@@ -78,6 +79,9 @@ func _physics_process(delta: float) -> void:
 		#print(overlapping_mobs)
 		#print(health)
 		if health<=0:
-			queue_free()
-			
+			#queue_free()
+			#if $resettimer.is_stopped():
+			#	$resettimer.start()
+			#if $resettimer.is_stopped():
+			get_tree().change_scene_to_file(Counter.current_room)
 				

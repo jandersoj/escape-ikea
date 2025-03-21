@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccn1lj7is1yt4"]
+
+[ext_resource type="PackedScene" uid="uid://cuqmw6rhxk366" path="res://IKEA_assets/dependencies/tristanBox.glb" id="1_r4n0f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cc1sv"]
+size = Vector3(2.02996, 0.438843, 2.50946)
+
+[node name="Box5" type="Node3D"]
+
+[node name="tristanBox" parent="." instance=ExtResource("1_r4n0f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tristanBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000541449, 0.207623, -0.00986397)
+shape = SubResource("BoxShape3D_cc1sv")

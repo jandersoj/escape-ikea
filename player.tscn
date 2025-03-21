@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl0caq60hdjjw"]
+[gd_scene load_steps=8 format=3 uid="uid://cl0caq60hdjjw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_et1mi"]
 [ext_resource type="PackedScene" uid="uid://cfg4t3f61gqjq" path="res://hud.tscn" id="2_1ou3x"]
-[ext_resource type="AudioStream" uid="uid://hlbhg4752bg8" path="res://sounds/Ambient Background.wav" id="2_g7v3s"]
 [ext_resource type="Script" path="res://flashlight.gd" id="2_i4x3j"]
 [ext_resource type="Script" path="res://pause.gd" id="5_elm10"]
 
@@ -54,10 +53,6 @@ wait_time = 0.6
 [node name="Timer3" type="Timer" parent="Camera3D/Flashlight"]
 wait_time = 0.2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_g7v3s")
-autoplay = true
-
 [node name="DamageTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -69,6 +64,10 @@ collision_mask = 2
 [node name="Collision" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100479, 1.32367, 0)
 shape = SubResource("CapsuleShape3D_775is")
+
+[node name="resettimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="timeout" from="Camera3D/Flashlight/Timer" to="Camera3D/Flashlight" method="_on_timer_timeout"]
 [connection signal="timeout" from="Camera3D/Flashlight/Timer2" to="Camera3D/Flashlight" method="_on_timer_2_timeout"]

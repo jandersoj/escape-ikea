@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuwbs25hhxdn0"]
+
+[ext_resource type="PackedScene" uid="uid://0lf78o0ot4ht" path="res://IKEA_assets/dependencies/BEKVAM.glb" id="1_n5pwg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opt1x"]
+size = Vector3(0.433498, 0.500458, 0.402153)
+
+[node name="Bekvam" type="Node3D"]
+
+[node name="BEKVAM" parent="." instance=ExtResource("1_n5pwg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BEKVAM"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00184143, 0.249381, -0.00237484)
+shape = SubResource("BoxShape3D_opt1x")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drkeysmfjajvu"]
+
+[ext_resource type="PackedScene" uid="uid://dkfujt15s75wc" path="res://IKEA_assets/dependencies/noahBox.glb" id="1_6giur"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b20qk"]
+size = Vector3(4.00684, 0.446045, 1.61572)
+
+[node name="Box3" type="Node3D"]
+
+[node name="noahBox" parent="." instance=ExtResource("1_6giur")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="noahBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00614357, 0.198337, -0.00444746)
+shape = SubResource("BoxShape3D_b20qk")

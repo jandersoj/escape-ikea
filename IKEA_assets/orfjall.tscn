@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0rvxv8tnla1f"]
+
+[ext_resource type="PackedScene" uid="uid://bk5sb2ungw55u" path="res://IKEA_assets/dependencies/ORFJALL.glb" id="1_nje5l"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gcf4r"]
+height = 0.681994
+radius = 0.306292
+
+[node name="Orfjall" type="Node3D"]
+
+[node name="ORFJALL" parent="." instance=ExtResource("1_nje5l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ORFJALL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.349885, 0)
+shape = SubResource("CylinderShape3D_gcf4r")

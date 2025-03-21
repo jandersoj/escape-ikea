@@ -1,18 +1,25 @@
-[gd_scene load_steps=31 format=3 uid="uid://b8b2yi3jlkpn0"]
+[gd_scene load_steps=48 format=3 uid="uid://sh8gefime62u"]
 
+[ext_resource type="Script" path="res://starbies.gd" id="1_eq8gg"]
 [ext_resource type="PackedScene" uid="uid://cl0caq60hdjjw" path="res://playerorg.tscn" id="2_fmd06"]
-[ext_resource type="Texture2D" uid="uid://dmmd2s4g5w1kb" path="res://assets/stone.png" id="3_hue03"]
-[ext_resource type="Texture2D" uid="uid://yu0i5laobyc" path="res://assets/wood.png" id="4_6pwtl"]
-[ext_resource type="Script" path="res://spot_light_3d_26.gd" id="4_mcefr"]
-[ext_resource type="Texture2D" uid="uid://x1e1236f6736" path="res://assets/city2.png" id="5_67pii"]
-[ext_resource type="Texture2D" uid="uid://clje5yiskrr4w" path="res://assets/city.png" id="6_hx7o7"]
-[ext_resource type="Texture2D" uid="uid://dlauu7acvmgkb" path="res://assets/bookshelf.png" id="6_wqglx"]
+[ext_resource type="AudioStream" uid="uid://dt27fmu0h3fo8" path="res://sounds/starbies.wav" id="2_uo0ba"]
+[ext_resource type="Texture2D" uid="uid://yu0i5laobyc" path="res://assets/wood.png" id="4_nxshf"]
+[ext_resource type="Script" path="res://poof.gd" id="5_tju1u"]
+[ext_resource type="Texture2D" uid="uid://dmmd2s4g5w1kb" path="res://assets/stone.png" id="5_xtin7"]
+[ext_resource type="Script" path="res://spot_light_3dnew.gd" id="6_4md58"]
+[ext_resource type="Script" path="res://spot_light_3d_26.gd" id="6_by4ls"]
+[ext_resource type="Texture2D" uid="uid://x1e1236f6736" path="res://assets/city2.png" id="7_behyy"]
+[ext_resource type="Texture2D" uid="uid://dlauu7acvmgkb" path="res://assets/bookshelf.png" id="8_kagaa"]
+[ext_resource type="Texture2D" uid="uid://clje5yiskrr4w" path="res://assets/city.png" id="9_l1kxr"]
+[ext_resource type="Texture2D" uid="uid://pv5k71f8ph5b" path="res://trash.jpeg" id="12_snvvb"]
+[ext_resource type="PackedScene" uid="uid://eg1dvo0x6awg" path="res://Employed.tscn" id="13_iby68"]
+[ext_resource type="Script" path="res://exit_trigger5.gd" id="14_hqx3g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dlwph"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kcs0"]
 albedo_color = Color(0.907942, 0.907942, 0.907942, 1)
-albedo_texture = ExtResource("4_6pwtl")
+albedo_texture = ExtResource("4_nxshf")
 metallic = 0.62
 metallic_specular = 0.72
 roughness = 0.4
@@ -24,7 +31,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_pmpbm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeu2y"]
-albedo_texture = ExtResource("3_hue03")
+albedo_texture = ExtResource("5_xtin7")
 albedo_texture_force_srgb = true
 ao_enabled = true
 uv1_scale = Vector3(10, 10, 1)
@@ -58,7 +65,7 @@ albedo_color = Color(0.270588, 0.270588, 0.270588, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_8k8e3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8wbr"]
-albedo_texture = ExtResource("4_6pwtl")
+albedo_texture = ExtResource("4_nxshf")
 uv1_scale = Vector3(40, 1, 40)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d6crv"]
@@ -67,7 +74,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="BoxMesh" id="BoxMesh_hxhwc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8shv"]
-albedo_texture = ExtResource("5_67pii")
+albedo_texture = ExtResource("7_behyy")
 metallic = 0.78
 metallic_specular = 0.84
 metallic_texture_channel = 2
@@ -78,13 +85,13 @@ uv1_scale = Vector3(3, 2, 1)
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgyqo"]
-albedo_texture = ExtResource("6_wqglx")
+albedo_texture = ExtResource("8_kagaa")
 uv1_scale = Vector3(4, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yokli"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m734"]
-albedo_texture = ExtResource("6_hx7o7")
+albedo_texture = ExtResource("9_l1kxr")
 metallic = 0.7
 metallic_texture_channel = 2
 clearcoat_enabled = true
@@ -93,7 +100,38 @@ uv1_scale = Vector3(4, 2, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n4ift"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ricl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kool2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cnucy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkn3r"]
+albedo_texture = ExtResource("12_snvvb")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ybdhq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ciccb"]
+albedo_texture = ExtResource("12_snvvb")
+uv1_scale = Vector3(1, 100, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_853xn"]
+albedo_color = Color(0.845703, 0.377103, 0.259327, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxuml"]
+material = SubResource("StandardMaterial3D_853xn")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_svwi2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwwcl"]
+size = Vector3(2.19629, 3.74609, 6.95874)
+
 [node name="starbies" type="Node3D"]
+script = ExtResource("1_eq8gg")
+
+[node name="Starbies" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_uo0ba")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -324,10 +362,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_qi2f0")
 shape = SubResource("ConcavePolygonShape3D_brjvs")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -25.8666, 9.27068, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.1815, 9.27068, 28.9117)
+visible = false
 light_color = Color(0, 1, 0, 1)
 light_energy = 16.0
+light_specular = 2.5
 spot_range = 31.748
+spot_angle = 13.75
+script = ExtResource("6_4md58")
+
+[node name="Timer" type="Timer" parent="SpotLight3D"]
+wait_time = 10.0
+autostart = true
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.28239, 9.27068, 0)
@@ -417,7 +463,7 @@ light_indirect_energy = 8.596
 light_volumetric_fog_energy = 6.01
 spot_range = 8.277
 spot_attenuation = 0.19
-script = ExtResource("4_mcefr")
+script = ExtResource("6_by4ls")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.3865, 17.3296, -24.9785)
@@ -559,3 +605,69 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0m734")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_n4ift")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 18.503, 0.520509, 28.9142)
+script = ExtResource("5_tju1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_1ricl")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 18.2549, 0.62332, 28.8808)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_kool2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("CylinderMesh_cnucy")
+surface_material_override/0 = SubResource("StandardMaterial3D_jkn3r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.47047, 0)
+mesh = SubResource("CapsuleMesh_ybdhq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ciccb")
+
+[node name="Label3D" type="Label3D" parent="Area3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0855808, 3.07628, 0.500977)
+pixel_size = 0.01
+modulate = Color(0.0261459, 0.291016, 0.0985712, 1)
+outline_modulate = Color(0.121094, 0.0867996, 0.0867996, 1)
+text = "Dont Forget
+To Recycle! :)
+~(*-*)~        
+<V>"
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0.0855808, 3.07628, 1.50346)
+mesh = SubResource("BoxMesh_vxuml")
+skeleton = NodePath("../Label3D")
+
+[node name="Area3D3" parent="." instance=ExtResource("13_iby68")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.683, 26)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000531673, -0.00664687, 7.62939e-05)
+shape = SubResource("CapsuleShape3D_svwi2")
+disabled = true
+
+[node name="Floor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, -1, 2.62268e-06, 0, -8.74228e-08, -30, 0, 15.2138, 0)
+mesh = SubResource("PlaneMesh_dlwph")
+surface_material_override/0 = SubResource("StandardMaterial3D_5kcs0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_32nay")
+
+[node name="Area3D4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2056, 0, 0)
+script = ExtResource("14_hqx3g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.567783, 1.43366, 0.258309)
+shape = SubResource("BoxShape3D_qwwcl")
+
+[connection signal="timeout" from="SpotLight3D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpotLight3D/Timer" to="SpotLight3D" method="_on_timer_timeout"]

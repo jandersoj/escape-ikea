@@ -1,7 +1,7 @@
 extends Area3D
 
 
-@export var next_room: String = "res://starbie.tscn"  # Path to next room
+@export var next_room: String = "res://starbies.tscn"  # Path to next room
 
 func _ready():
 	connect("body_entered", _on_body_entered)  # Connect signal in script

@@ -1,0 +1,107 @@
+[gd_scene load_steps=21 format=3 uid="uid://cfg4t3f61gqjq"]
+
+[ext_resource type="Script" path="res://health.gd" id="1_rhpx0"]
+[ext_resource type="Script" path="res://speed.gd" id="2_8giq2"]
+
+[sub_resource type="Theme" id="Theme_pqwb3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qk7so"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pdh40"]
+texture = SubResource("CanvasTexture_qk7so")
+modulate_color = Color(0.549544, 0.125513, 0.236529, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_58evg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pdc1h"]
+texture = SubResource("CanvasTexture_58evg")
+modulate_color = Color(0.156891, 0.327614, 0.00976679, 1)
+
+[sub_resource type="Theme" id="Theme_0aern"]
+default_base_scale = 0.31
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h8uy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu0g5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjn0g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oouq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ey0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pji5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5060y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7inbt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8pd8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sol3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynnek"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_77uwg"]
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 1151.0
+offset_top = 3.0
+offset_right = 2247.0
+offset_bottom = 82.0
+theme = SubResource("Theme_pqwb3")
+theme_override_styles/background = SubResource("StyleBoxTexture_pdh40")
+theme_override_styles/fill = SubResource("StyleBoxTexture_pdc1h")
+show_percentage = false
+
+[node name="Health" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.539
+anchor_top = 0.282
+anchor_right = 0.539
+anchor_bottom = 0.282
+offset_left = 0.0719604
+offset_top = 0.263992
+offset_right = 256.072
+offset_bottom = 181.264
+theme = SubResource("Theme_0aern")
+theme_override_colors/font_disabled_color = Color(0.835294, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.890196, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.803922, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.890196, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.803922, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.862745, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.847059, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.87451, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_8h8uy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_xu0g5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qjn0g")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_oouq2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p4ey0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2pji5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5060y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_7inbt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b8pd8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_sol3u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ynnek")
+text = "HEALTH"
+icon = SubResource("CanvasTexture_77uwg")
+script = ExtResource("1_rhpx0")
+
+[node name="Speed" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.306
+anchor_top = 0.33
+anchor_right = 0.306
+anchor_bottom = 0.33
+offset_left = -9.51202
+offset_top = -45.84
+offset_right = 209.488
+offset_bottom = 161.16
+theme_override_font_sizes/font_size = 30
+text = "SPEED"
+script = ExtResource("2_8giq2")

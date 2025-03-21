@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx7lg87dp8e0i"]
+
+[ext_resource type="PackedScene" uid="uid://ueqq4t2i65g" path="res://IKEA_assets/dependencies/ADDE.glb" id="1_vj2vk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i04gv"]
+size = Vector3(0.432617, 0.796936, 0.490234)
+
+[node name="Adde" type="Node3D"]
+
+[node name="ADDE" parent="." instance=ExtResource("1_vj2vk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ADDE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00437216, 0.399289, -0.0115827)
+shape = SubResource("BoxShape3D_i04gv")

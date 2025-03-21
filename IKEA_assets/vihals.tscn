@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://df17tpuavxu6a"]
+
+[ext_resource type="PackedScene" uid="uid://dirowp5pvrudu" path="res://IKEA_assets/dependencies/VIHALS.glb" id="1_w743h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1t8q"]
+size = Vector3(1.21936, 0.762329, 0.766235)
+
+[node name="Vihals" type="Node3D"]
+
+[node name="VIHALS" parent="." instance=ExtResource("1_w743h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VIHALS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000915527, 0.381042, 6.10352e-05)
+shape = SubResource("BoxShape3D_h1t8q")

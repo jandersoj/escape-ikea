@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnt3sy1uwy2mb"]
+
+[ext_resource type="Script" path="res://quit_screen.gd" id="1_5jqrd"]
+[ext_resource type="Texture2D" uid="uid://dskkn7nqxmiqj" path="res://assets/skyline.jpeg" id="2_mmdln"]
+[ext_resource type="Script" path="res://helicopter.gd" id="3_wb5sn"]
+[ext_resource type="Texture2D" uid="uid://ckkmnpxegy7he" path="res://assets/helicopter.png" id="3_xslxn"]
+
+[sub_resource type="FontVariation" id="FontVariation_shgxe"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, -12)
+script = ExtResource("1_5jqrd")
+
+[node name="Skyline" type="Sprite2D" parent="."]
+position = Vector2(681.125, 422.625)
+scale = Vector2(0.45325, 0.459727)
+texture = ExtResource("2_mmdln")
+
+[node name="Helicopter" type="Sprite2D" parent="."]
+position = Vector2(1178, 654)
+scale = Vector2(0.0275625, 0.0275556)
+texture = ExtResource("3_xslxn")
+script = ExtResource("3_wb5sn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(690, 396)
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 452.0
+offset_top = 95.0
+offset_right = 915.0
+offset_bottom = 328.0
+theme_override_colors/font_color = Color(0, 0.717647, 0.129412, 1)
+theme_override_fonts/font = SubResource("FontVariation_shgxe")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER
+YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 496.0
+offset_top = 277.0
+offset_right = 900.0
+offset_bottom = 634.0
+theme_override_colors/font_color = Color(0.999175, 0.968832, 0.966654, 1)
+theme_override_font_sizes/font_size = 30
+text = "Credits:
+Isreal McDonald
+Tristan Agbayani
+Josie Anderson
+Noah Castevens
+Sergio Baguena
+Thanks to Micheal Sarris for
+voice acting!"
+horizontal_alignment = 1
+vertical_alignment = 1

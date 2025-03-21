@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqqjxuovemr20"]
+
+[ext_resource type="PackedScene" uid="uid://cwfxy7vvqbfat" path="res://IKEA_assets/dependencies/GLOSTAD.glb" id="1_l8vpq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2cipo"]
+size = Vector3(1.24207, 0.748199, 0.782379)
+
+[node name="Glostad" type="Node3D"]
+
+[node name="GLOSTAD" parent="." instance=ExtResource("1_l8vpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136196, 0, 0.351161)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GLOSTAD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000966549, 0.377937, -0.000900269)
+shape = SubResource("BoxShape3D_2cipo")

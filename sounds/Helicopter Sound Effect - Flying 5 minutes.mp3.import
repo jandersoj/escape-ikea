@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5wyfeubxp1i2"
+path="res://.godot/imported/Helicopter Sound Effect - Flying 5 minutes.mp3-932f26d5def49b58cec2d6b7103ada3d.mp3str"
+
+[deps]
+
+source_file="res://sounds/Helicopter Sound Effect - Flying 5 minutes.mp3"
+dest_files=["res://.godot/imported/Helicopter Sound Effect - Flying 5 minutes.mp3-932f26d5def49b58cec2d6b7103ada3d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

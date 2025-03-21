@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkm4tf807y23q"]
+
+[ext_resource type="PackedScene" uid="uid://wnoi1c0wrk0o" path="res://IKEA_assets/dependencies/HAMMARN.glb" id="1_mpwlt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pg8s0"]
+size = Vector3(1.29572, 0.80249, 0.895477)
+
+[node name="Hammarn" type="Node3D"]
+
+[node name="HAMMARN" parent="." instance=ExtResource("1_mpwlt")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HAMMARN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00167847, 0.408081, 0.0111542)
+shape = SubResource("BoxShape3D_pg8s0")
+disabled = true

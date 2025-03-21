@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ban8a3kn8g1mb"]
+
+[ext_resource type="Texture2D" uid="uid://pv5k71f8ph5b" path="res://trash.jpeg" id="1_m5bcw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1imb7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_66h4j"]
+radius = 0.708064
+
+[sub_resource type="SphereMesh" id="SphereMesh_jr8uk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1ver"]
+albedo_texture = ExtResource("1_m5bcw")
+
+[node name="TrashCanLid" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.810383, 0)
+physics_material_override = SubResource("PhysicsMaterial_1imb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0378165, 0)
+shape = SubResource("SphereShape3D_66h4j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.000254512, 0)
+mesh = SubResource("SphereMesh_jr8uk")
+surface_material_override/0 = SubResource("StandardMaterial3D_e1ver")
